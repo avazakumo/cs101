@@ -2,6 +2,7 @@
 using namespace std;
 
 class myArray {
+    public:
     int n;
     int* array;
     int size;
