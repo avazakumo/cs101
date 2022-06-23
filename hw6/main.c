@@ -2,21 +2,21 @@
 #include <stdlib.h>
 
 struct node {
-    int Data;
+    char data;
     struct node* Next;
 };
 typedef struct node node_t;
 
 node_t* allocate_node(int data) {
     node_t* head = (node_t*)calloc(0,sizeof(node_t));
-    head->Data = data;
+    head->data = data;
     head->Next = NULL;
     return head;
 }
 
 void show_list(node_t* head) {
     while (head!=0) {
-        printf("[%d]-> ", head->Data);
+        printf("[%d]-> ", head->data);
         head = head->Next;
     }
     printf("null\n");
@@ -35,7 +35,7 @@ void free_all_node(node_t* head) {
     while (head) {
         node_t* p = head;
         head = head->Next;
-        printf("free([%d])-> ", p->Data);
+        printf("free([%d])-> ", p->data);
         free(p);
     }
     printf("null\n");
@@ -51,7 +51,7 @@ node_t* del_node(node_t* head, int n) {
     if (n == 0) {
         node_t* next = head->Next;
         while (head->Next) {
-            head->Data = next->Data;
+            head->data = next->data;
             head->Next = next->Next;
             head = next;
         }
