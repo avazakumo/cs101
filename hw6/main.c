@@ -70,8 +70,7 @@ node_t* del_node(node_t* head, int n) {
     return previous_node;
 }
 
-int main()
-{
+int main() {
     node_t* head = NULL;
     head = append_node(head,0);
     show_list(head);
